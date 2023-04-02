@@ -5,6 +5,7 @@ from fixture.application import Application
 import pytest
 
 
-def test_contact_creation(app):
-    app.contact.create(Contact("nn", "ll"))
+def test_contact_deletion(app):
+    app.contact.delete()
     # app.session.logout()
+

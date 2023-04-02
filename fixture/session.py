@@ -17,3 +17,8 @@ class SessionHelper:
         driver.find_element(By.NAME, "pass").click()
         driver.find_element(By.NAME, "pass").send_keys(password)
         driver.find_element(By.CSS_SELECTOR, "input:nth-child(7)").click()
+
+    def logout(self):
+        driver = self.app.driver
+        driver.find_element(By.LINK_TEXT, "Logout").click()
+

@@ -33,7 +33,7 @@ class SessionHelper:
     def is_logged_in_as(self, user_name):
         driver = self.app.driver
         return driver.find_element(By.CSS_SELECTOR, "form[name='logout'] b").text == "("+user_name+")"
-    
+
     def ensure_login(self, user_name, password):
         if self.is_logged_in():
             if self.is_logged_in_as(user_name):

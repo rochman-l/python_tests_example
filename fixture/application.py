@@ -6,8 +6,13 @@ from fixture.session import SessionHelper
 
 class Application:
 
-    def __init__(self):
-        self.driver = webdriver.Chrome()
+    def __init__(self, browser='chrome'):
+        if browser == "chrome":
+            self.driver = webdriver.Chrome()
+        elif browser == "firefox":
+            self.driver = webdriver.Firefox()
+        else:
+            raise ValueError("Unrecognized browser %s" % browser)
         self.driver.implicitly_wait(10)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
